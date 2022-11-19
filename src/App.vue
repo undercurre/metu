@@ -1,12 +1,12 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <i-mdi-account-box />
-  <i-mdi-alarm-off />
-  <div class="font-bold text-blue-700">{{ $t('language') }}</div>
-  <van-button type="danger">危险按钮</van-button>
-  <n-button>Default</n-button>
+  <div>
+    <i-mdi-account-box />
+    <i-mdi-alarm-off />
+    <van-button type="danger">危险按钮</van-button>
+    <n-button>Default</n-button>
+  </div>
 </template>
 
 <style scoped>
