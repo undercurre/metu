@@ -25,7 +25,7 @@ export default [
             /\.vue\?vue/, // .vue
             /\.md$/, // .md
         ],
-        imports: ['vue'],
+        imports: ['vue', 'pinia', 'vue-router', 'vue-i18n', '@vueuse/core'],
         dts: './src/types/auto-imports.d.ts',
     }),
     Components({

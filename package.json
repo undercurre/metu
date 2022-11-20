@@ -13,11 +13,15 @@
         "prettier": "prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}",
         "stylelint": "stylelint \"./**/*.{css,less,vue,html}\" --fix",
         "prepare": "husky install",
-        "commit": "git-cz"
+        "commit": "git add . && git-cz"
     },
     "dependencies": {
+        "@vueuse/core": "^9.5.0",
+        "axios": "^1.1.3",
+        "pinia": "^2.0.24",
         "vue": "^3.2.41",
-        "vue-i18n": "^9.2.2"
+        "vue-i18n": "^9.2.2",
+        "vue-router": "^4.1.6"
     },
     "devDependencies": {
         "@iconify/json": "^2.1.140",
