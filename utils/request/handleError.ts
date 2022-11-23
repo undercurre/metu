@@ -45,6 +45,8 @@ const handleNetworkError = (errStatus) => {
         errMessage = `无法连接到服务器！`
     }
 
+    translateError(errMessage)
+
     return errMessage;
 }
 
@@ -60,7 +62,10 @@ const handleAuthError = (errno) => {
 	  '10038': '账号未找到',
 	}
 	
+    translateError(errno)
+
 	if (authErrMap.hasOwnProperty(errno)) {
+        // 用组件提示
 		// message.error(authErrMap[errno])
 		// 授权错误，登出账户
 		// logout()
@@ -72,6 +77,8 @@ const handleAuthError = (errno) => {
 
 const handleGeneralError = (errno, errmsg) => {
 	if (errno !== '0') {
+        translateError(errmsg)
+        // 用组件提示
 		// meessage.error(err.errmsg)
 		return false
 	}
@@ -82,4 +89,10 @@ const handleGeneralError = (errno, errmsg) => {
 const translateError = (msg) => {
     // 通过组件和翻译逻辑给用户看错误原因
     console.log(msg)
+}
+
+export default {
+    handleNetworkError,
+    handleAuthError,
+    handleGeneralError
 }

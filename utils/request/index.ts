@@ -12,7 +12,7 @@ interface ResponseData<T> {
   data: T
 }
 
-const get = <T>(url: string, params: RequestData = {}, filter?: ResponseHandle): Promise<[any, ResponseData<T> | undefined]> =>
+const get = <T,>(url: string, params: RequestData = {}, filter?: ResponseHandle): Promise<[any, ResponseData<T> | undefined]> =>
   new Promise((resolve) => {
     axios
       .get(url, { params })
@@ -29,3 +29,42 @@ const get = <T>(url: string, params: RequestData = {}, filter?: ResponseHandle):
         resolve([err, undefined])
       })
   })
+
+  export const post = <T,>(url: string, data: RequestData, params: RequestData = {}): Promise<[any, ResponseData<T> | undefined]> => {
+    return new Promise((resolve) => {
+      axios
+        .post(url, data, { params })
+        .then((result) => {
+          resolve([null, result.data as ResponseData<T>])
+        })
+        .catch((err) => {
+          resolve([err, undefined])
+        })
+    })
+  }
+  
+  export const put = <T,>(url: string, data: RequestData, params: RequestData = {}): Promise<[any, ResponseData<T> | undefined]> => {
+    return new Promise((resolve) => {
+      axios
+        .post(url, data, { params })
+        .then((result) => {
+          resolve([null, result.data as ResponseData<T>])
+        })
+        .catch((err) => {
+          resolve([err, undefined])
+        })
+    })
+  }
+
+  export const del = <T,>(url: string, data: RequestData, params: RequestData = {}): Promise<[any, ResponseData<T> | undefined]> => {
+    return new Promise((resolve) => {
+      axios
+        .post(url, data, { params })
+        .then((result) => {
+          resolve([null, result.data as ResponseData<T>])
+        })
+        .catch((err) => {
+          resolve([err, undefined])
+        })
+    })
+  }
