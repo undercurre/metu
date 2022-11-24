@@ -1,19 +1,22 @@
-import axios from "axios"
-import handleError from "./handleError"
+import axios from 'axios';
+import handleError from './handleError';
 
 axios.interceptors.response.use(
     (response) => {
         //
-        if (response.status !== 200) return Promise.reject(response.data)
+        if (response.status !== 200) return Promise.reject(response.data);
 
-        handleError.handleAuthError(response.data.errno)
-        handleError.handleGeneralError(response.data.errno, response.data.errmsg)
+        handleError.handleAuthError(response.data.errno);
+        handleError.handleGeneralError(
+            response.data.errno,
+            response.data.errmsg,
+        );
 
-        return response
+        return response;
     },
     (err) => {
         // 对响应错误做处理
-        handleError.handleNetworkError(err.response.status)
-        Promise.reject(err.response)
-    }
-)
+        handleError.handleNetworkError(err.response.status);
+        Promise.reject(err.response);
+    },
+);
