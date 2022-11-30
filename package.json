@@ -1,7 +1,7 @@
 {
     "name": "metu",
     "private": true,
-    "version": "0.0.0",
+    "version": "0.0.1",
     "type": "commonjs",
     "scripts": {
         "dev": "vite",
@@ -13,7 +13,10 @@
         "prettier": "prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}",
         "stylelint": "stylelint \"./**/*.{css,less,vue,html}\" --fix",
         "prepare": "husky install",
-        "commit": "git add . && git-cz"
+        "commit": "git add . && git-cz",
+        "release": "standard-version",
+        "alpha": "standard-version -p alpha",
+        "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
     },
     "dependencies": {
         "@vueuse/core": "^9.5.0",
@@ -35,6 +38,7 @@
         "autoprefixer": "^10.4.13",
         "commitizen": "^4.2.5",
         "commitlint-config-cz": "^0.13.3",
+        "conventional-changelog-cli": "^2.2.2",
         "cz-conventional-changelog": "^3.3.0",
         "cz-customizable": "^7.0.0",
         "eslint": "^8.28.0",
@@ -49,6 +53,7 @@
         "postcss-less": "^6.0.0",
         "postcss-px-to-viewport-8-plugin": "^1.1.5",
         "prettier": "^2.7.1",
+        "standard-version": "^9.5.0",
         "stylelint": "^14.15.0",
         "stylelint-config-prettier": "^9.0.4",
         "stylelint-config-recommended-less": "^1.0.4",
