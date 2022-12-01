@@ -1,5 +1,6 @@
 import vue from '@vitejs/plugin-vue';
 import vueJsx from '@vitejs/plugin-vue-jsx';
+import { viteMockServe } from 'vite-plugin-mock';
 import Unocss from 'unocss/vite';
 import AutoImport from 'unplugin-auto-import/vite';
 import Components from 'unplugin-vue-components/vite';
@@ -56,5 +57,9 @@ export default [
     }),
     VueI18n({
         include: ['../src/locales/'], // 翻译目录
+    }),
+    viteMockServe({
+        mockPath: './src/mock',
+        supportTs: true, //如果使用 js发开，则需要配置 supportTs 为 false
     }),
 ];
