@@ -2,7 +2,7 @@ import autoprefixer from 'autoprefixer';
 import postcsspxtoviewport from 'postcss-px-to-viewport-8-plugin';
 
 // eslint-disable-next-line no-undef
-module.exports = {
+export default {
     plugins: [
         autoprefixer({
             //兼容市面所有版本浏览器
