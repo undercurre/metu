@@ -4,10 +4,7 @@ import postcsspxtoviewport from 'postcss-px-to-viewport-8-plugin';
 // eslint-disable-next-line no-undef
 export default {
     plugins: [
-        autoprefixer({
-            //兼容市面所有版本浏览器
-            browsers: ['> 0% '],
-        }),
+        autoprefixer(),
         postcsspxtoviewport({
             unitToConvert: 'px', // 需要转换的单位
             viewportWidth: 375, // 视口宽度，等同于设计稿宽度
